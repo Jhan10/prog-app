@@ -1,5 +1,47 @@
-       // The install button.
-const installButton = document.querySelector('button');
+
+
+//#region Workers
+/******Workers Code********/
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/service-worker.js');
+}
+
+//#endregion Workers
+
+//#region Code
+class Code {
+  hello=document.getElementsByClassName("hello")[0];
+  bye=document.getElementsByClassName("bye")[0];
+  Hello(){
+    alert("Hello!");
+    this.hello.setAttribute("Style","Display: none");
+    this.bye.setAttribute("Style","Display: block");
+  }
+  Bye(){
+    alert("Bye!");
+    this.bye.setAttribute("Style","Display: none");
+    this.hello.setAttribute("Style","Display: block");
+  }
+/*   retrieveManifestField() {
+    //const fs = require('fs');
+    fs.readFile('/manifest.json', 'utf-8', (err, file) => {
+      if (err) console.log("Ocorreu um erro: ", err); alert("Ocorreu um erro: ", err.message);
+
+      const jsonFile = JSON.parse(file);
+      console.log("jsonFile: ", jsonFile);
+      console.log("jsonFile.description: ", jsonFile["description"]);
+    });
+    return 'ok'
+  } */
+}
+window.code = new Code();
+
+//#endregion Code
+
+//#region PWAInstallation
+// The install button.
+//const installButton = document.querySelector('button');
+const installButton = document.getElementsByClassName('pr-install')[0];
 
 // Only relevant for browsers that support installation.
 if ('BeforeInstallPromptEvent' in window) {
@@ -44,3 +86,4 @@ if ('BeforeInstallPromptEvent' in window) {
     onInstall();
   });
 }
+//#endregion PWAInstallation

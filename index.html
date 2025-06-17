@@ -6,19 +6,26 @@
     <title>Documento</title>
     <link rel="shortcut icon" href="2logo.png" type="image/x-icon">
     <link rel="manifest" href="manifest.json">
-    <script>
-        if('serviceWorker' in navigator){
-            navigator.serviceWorker.register('/service-worker.js');
-        }
+    <script type="module" src="script.js">
     </script>
-    <script type="module" src="script.js"></script>
 </head>
 <body>
     <div>
         <h1>Berry WhatsApp Bot Center</h1>
+        <div class="hello">
+            <button type="button" onclick="code.Hello()">shou</button>
+        </div>
+        <div class="bye" style="display: none;">
+            <h2>https://jhan10.github.io/prog-app/</h2>
+            <h3><a href="https://mdn.github.io/pwa-examples/a2hs/">pwa-examples/a2hs</a></h3>
+            <h3><a href="https://prog-app.vercel.app">prog-app.vercel</a></h3>
+            <button type="button" onclick="code.Bye()">hide</button>
+        </div>
+
     </div>
     <div>
-        <button disabled type="button">Instalar</button>
+        <br /> <br />
+        <button disabled type="button" class="pr-install">Instalar</button>
     </div>
 </body>
 </html>
